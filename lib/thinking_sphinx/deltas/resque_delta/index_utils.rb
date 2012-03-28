@@ -26,10 +26,12 @@ module ThinkingSphinx::Deltas::ResqueDelta::IndexUtils
   end
 
   def delta_to_core(delta_name)
+    delta_name = delta_name.is_a?(Array) ? delta_name.first : delta_name
     delta_name.sub(/_delta$/, '_core')
   end
 
   def core_to_delta(core_name)
+    core_name = core_name.is_a?(Array) ? core_name.first : core_name
     core_name.sub(/_core$/, '_delta')
   end
 
